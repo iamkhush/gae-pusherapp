@@ -16,6 +16,10 @@ Next, trigger an event
 
     pusher['channel'].trigger('event', data={'msg': 'Hello world!'})
 
+or 
+
+    pusher['channel'].trigger('event', data={'msg': 'Hello world!'}, socket_id )
+
 You probably want to run this in a taskqueue... read on for details...
 
 Using within Google App Engine
