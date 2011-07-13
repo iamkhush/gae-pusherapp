@@ -193,3 +193,11 @@ class Pusher():
                 headers={'Content-Type': 'application/json'},
                 deadline=10
             )
+
+
+def presence_authenticate(socketid,channelname,data,key,secret):
+    string_to_sign = '%s:%s:%s' %(socketid,channelname,data)
+    auth = hmac.new(secret,string_to_sign,hashlib.sha256).hexdigest()
+    auth = '%s:%s'%(key,auth)
+    string_to_send = { 'auth' : auth , 'channel_data' : data}
+    return string_to_send
