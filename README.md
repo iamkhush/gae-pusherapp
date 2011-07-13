@@ -22,6 +22,11 @@ or
 
 You probably want to run this in a taskqueue... read on for details...
 
+To authenticate for presence subscription : 
+
+    pusherapp.presence_authenticate(socketid,channelname,data,pusher_key,pusher_secret)
+
+
 Using within Google App Engine
 ------------------------------
 
